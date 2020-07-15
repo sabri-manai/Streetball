@@ -1,0 +1,29 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<%- include('../partials/flashMessages') -%>      
+</header>
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <div class="col-md-12">
+    </div>
+    <p>hh</p>
+    <% if ( event.date == date ) { %>
+
+    <div class="col-md-3 col-sm-6">
+           <div class="thumbnail">
+              <div class="caption">
+                  <h4><%= event.title %></h4>
+                  <h6><%= event.location %></h6>
+                  <h6><%= event.booking %></h6>
+              </div>
+              <!-- <p>
+                <a href="<%=  '/users/userInfo/showUser/'  + user.id %>" class="btn btn-primary">Show More</a>
+              </p> -->
+           </div>
+       </div>
+       <% } %>
+</div>
+</div>
+<% include ../partials/footer %>
+
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

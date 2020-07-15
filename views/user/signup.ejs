@@ -1,0 +1,74 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i>Player register
+        </h1>
+            <hr>
+       
+            <%- include('../partials/flashMessages') -%>     
+            
+            <form  action="/users/signup" method="post">
+             
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" name="confirm_password" id="confirm_password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="UserName">First name:</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Last name:</label>
+                    <input type="text" name="lastName" id="lastName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" name="mobile" id="mobile" class="form-control">
+                </div>
+                <div class="form-group">
+                <label for="playerPos">Choose your post:</label>
+
+                <select name="playerPos" id="playerPos">
+                  <option value="Goolkeeper">Goolkeeper</option>
+                  <option value="Defensive">Defensive</option>
+                  <option value="midfield">Midfield</option>
+                  <option value="offensive">Offensive</option>
+                </select>
+                </div>
+                    <div class="form-group">
+                            <label for="location">Location:</label>
+                            <input type="text" name="location" id="location" class="form-control">
+                        </div>
+                    <div class="form-group">
+                            <label for="dateOfBirth">Born:</label>
+                            <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control">
+                        </div>
+            
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"> Create</button>
+                    </div>
+        
+            </form>
+            <p class="lead mt-4">Stadium manager? <a href="/users/stadium-signup">Signup </a></p>
+            <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+            
+        </div>
+    </div>
+</div>
+
+    
+<%- include('../partials/footer') -%>

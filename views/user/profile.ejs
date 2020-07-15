@@ -1,0 +1,62 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<%- include('../partials/flashMessages') -%>      
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="<%= '/images/' + user.avatar%>" height="150px" width="150px" class="avatar"   >
+            <style>
+                .avatar{
+                    border-radius: 50%
+                }
+            </style>
+            
+        </div>
+        <div class="col-md-9">
+            <h5 class="display-3">Hi <%= user.firstName %>  </h5>
+            <br> <hr> 
+            <h5 class="display-5"> My profile:  </h5>
+            <p>
+                <% if (user) { %>
+                    <div class="container">
+    
+                        <div class="row mt-4">
+                                
+                            <div class="col-md-9 offset-md-1">
+                                <div class="card">         
+                                    <div class="card-body">
+                                        <h5 class="card-title">Full name: <%=user.firstName %> <%=user.lastName %></h5>
+                                        <hr>
+                                        <p class="card-text">Phone: <%=user.mobile %></p>
+                                        <hr>
+                                        <p class="card-text">Player role: <%=user.playerPos %></p>
+                                        <hr>
+                                        <p>City: <%=user.location%></p>
+                                        <hr>
+                                        <p>E-mail address: <%=user.email%></p>
+                                        <hr>                       
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        
+                        </div>
+                        
+                        </div>
+               
+               
+                    <%}%>
+            </p>
+         <button>  <a class="nav-link" href="/users/edit/" >Edit profile</a>
+         </button> 
+
+            <hr>
+         
+           
+           
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

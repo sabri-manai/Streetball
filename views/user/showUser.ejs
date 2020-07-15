@@ -1,0 +1,28 @@
+
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container">
+    
+<div class="row mt-4">
+        
+    <div class="col-md-9 offset-md-1">
+        <div class="card">         
+            <div class="card-body">
+                <h5 class="card-title"><%=user.firstName %> <%=user.lastName %></h5>
+                <hr>
+                <p class="card-text"><%=user.location%></p>
+                <p class="card-text"><%=user.mobile%></p>
+                <p class="card-text"><%=user.email%></p>
+                <p><%=user.job%></p>
+                <p><span class="badge badge-secondary"><%=user.dateOfBirth.toDateString()%></span></p>
+                
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+<%- include('../partials/footer.ejs') -%>

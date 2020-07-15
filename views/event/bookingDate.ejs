@@ -1,0 +1,34 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-9 offset-md-3">
+            <h1 class="display-4">Choose events day:</h1>
+            <hr>
+       
+            <%- include('../partials/flashMessages') -%>      
+            <form  action="/events/booking-date" method="post">
+                        <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" name="date" id="date"  class="form-control">
+                                <input type="hidden" name="title" id="title" value="Game 1" class="form-control">
+                                <input type="hidden" name="description" id="description" value="this game is " class="form-control">
+                                <input type="hidden" name="location" id="location" value="<%=user.location%>"  class="form-control">
+                                <input type="hidden" name="title2" id="title2" value="Game 2" class="form-control">
+                                <input type="hidden" name="title3" id="title3" value="Game 3" class="form-control">
+                                <input type="hidden" name="title4" id="title4" value="Game 4" class="form-control">
+                                <input type="hidden" name="title5" id="title5" value="Game 5" class="form-control">
+                                <input type="hidden" name="title6" id="title6" value="Game 6" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Next</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
+<%- include('../partials/footer') -%>

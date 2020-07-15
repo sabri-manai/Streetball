@@ -1,0 +1,55 @@
+
+
+    
+<%- include('../partials/footer') -%>
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-9 offset-md-3">
+            <h1 class="display-4">Edit the Event:</h1>
+            <hr>
+       
+            <%- include('../partials/flashMessages') -%>      
+            <form  action="/events/supdate" method="post">
+                <div class="form-group">
+                    <h5 class="card-title"><%=event.title %></h5>
+                    <hr>
+                    <p><%=event.location%></p>
+                    <p><span class="badge badge-secondary"><%=event.date.toDateString()%></span></p>
+                    <input type="hidden" name="title" id="title" class="form-control" value="<%= event.title%>" >
+                </div>
+                
+                <input type="hidden" name="id" value="<%=event.id%>">
+                <div class="form-group">
+                       <input type="hidden" name="description" rows="4" value="This event is " class="form-control"><%= event.description%></input>
+                    </div>
+
+                <div class="form-group">
+                            <input type="hidden" name="location" id="location" class="form-control" value="<%= event.location%>" >
+                        </div>
+
+                       <div class="form-group" >
+                            <% if (event.booking==="not booked") { %>
+                            <input type="radio" id="booking" name="booking" value="booked"> Booked
+                            <input type="radio" id="booking" name="booking" value="not booked" checked="checked" > Not  Booked
+                            <% } else { %>
+                            <input type="radio" id="booking" name="booking" value="booked" checked="checked"> Booked
+                            <input type="radio" id="booking" name="booking" value="not booked" > Not  Booked   
+                            <% } %>        
+                        </div> 
+                        <div class="form-group">
+                                <input type="hidden" name="date" id="date" class="form-control" value="<%= eventDate %>">
+                            </div>
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"> Update</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
+<%- include('../partials/footer') -%>
